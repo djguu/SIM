@@ -1,9 +1,14 @@
 <?php
+//session_start();
+//
+//if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
+//    header("location: index.php");
+//    exit;
+//}
 
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
-    header("location: index.php");
-    exit;
-}
+//error_reporting(E_ERROR | E_PARSE);
+
+require_once $_SERVER['DOCUMENT_ROOT'].'/SIM/php/login.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -76,11 +81,11 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
 
 <!-- Page Loader
 ===================================== -->
-<div id="pageloader">
-    <div class="loader-item">
-        <img src="assets/img/other/puff.svg" alt="page loader">
-    </div>
-</div>
+<!--<div id="pageloader">-->
+<!--    <div class="loader-item">-->
+<!--        <img src="assets/img/other/puff.svg" alt="page loader">-->
+<!--    </div>-->
+<!--</div>-->
 
 <div class="site-wrapper" style="background-color:lightgrey">
 <!--    <div class="site-wrapper" style="background:url(assets/img/bg/img-bg-26.jpg) 50% 50% no-repeat;">-->
@@ -105,7 +110,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
 
                             <div class="navbar-collapse collapse navbar-main-collapse">
                                 <ul class="nav navbar-nav">
-                                    <li class=""><a href="#" class="showFormRegister"><span class="color-dark">Registo</span></a>
+                                    <li class=""><a href="registo.php" class="showFormRegister"><span class="color-dark">Registo</span></a>
                                     <li class=""><a href="#" class="showFormRegister showFormLogin hidden"><span class="color-dark">Login</span></a>
                                 </ul>
 
@@ -119,55 +124,57 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
             <div id="formLogin" class="inner cover text-center animated" data-animation="fadeIn" data-animation-delay="100">
                 <br>
                 <h3 class="font-montserrat cover-heading mb20 mt20">Login</h3>
-                <form class="clearfix mb35" method="post" action="./php/login.php">
-                    <div class="col-sm-8 col-sm-offset-2">
-                        <input type="text" name="username_login" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username">
+                <form class="clearfix mb35" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="col-sm-8 col-sm-offset-2 <?php echo (!empty($username_error)) ? 'text-danger' : ''; ?>">
+                        <input type="text" name="username_login" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username" value="<?php echo $username; ?>">
+                        <span class="text-danger"><?php echo $username_error; ?></span>
                     </div>
-                    <div class="col-sm-8 col-sm-offset-2 mt10">
+                    <div class="col-sm-8 col-sm-offset-2 mt10" <?php echo (!empty($password_error)) ? 'text-danger' : ''; ?>>
                         <input type="password" name="password_login" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Password">
+                        <span class="text-danger"><?php echo $password_error; ?></span>
                     </div>
                     <div class="col-sm-8 col-sm-offset-2 mt5">
                         <button class="button button-lg button-circle button-block button-pasific hover-ripple-out">Login</button><br><br>
                         <a href="#" class="color-light mt20">Repor palavra-passe</a><br>
-                        <a href="#" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
+                        <a href="registo.php" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
                     </div>
                 </form>
                 <br>
             </div>
 
-            <div id="formRegister" class="inner cover text-center hidden animated" data-animation="fadeIn" data-animation-delay="100">
-                <br>
-                <h3 class="font-montserrat cover-heading mb20 mt20">Registar</h3>
-                <form class="clearfix mb35" method="post" action="./php/registo.php">
-                    <div class="col-sm-8 col-sm-offset-2">
-                        <input type="text" name="username" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username">
-                    </div>
-                    <div class="col-sm-4 col-sm-offset-2 mt10">
-                        <input type="password" name="password" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Password">
-                    </div>
-                    <div class="col-sm-4 mt10">
-                        <input type="password" name="password_confirm" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Confirmar Password">
-                    </div>
-                    <div class="col-sm-8 col-sm-offset-2 mt10">
-                        <input type="email" name="email" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Email">
-                    </div>
-
-                    <div class="col-sm-4 col-sm-offset-2 mt10">
-                        <input type="text" name="name" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Nome">
-                    </div>
-                    <div class="col-sm-4 mt10">
-                        <input type="text" name="surname" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Sobrenome">
-                    </div>
-                    <div class="col-sm-8 mt10 col-sm-offset-2">
-                        <input name="data_nascimento" placeholder="Data de nascimento" class="form-control text-center no-border input-lg input-circle bg-light-transparent" type="text" onfocus="(this.type='date')"  id="date">
-                    </div>
-                    <div class="col-sm-8 col-sm-offset-2 mt5">
-                        <button name="register" class="button button-lg button-circle button-block button-pasific hover-ripple-out">Registar</button><br><br>
-                        <a href="#" class="color-light mt20 showFormLogin" id="showFormLogin">Tem uma conta? Login</a><br>
-                    </div>
-                </form>
-                <br>
-            </div>
+<!--            <div id="formRegister" class="inner cover text-center hidden animated" data-animation="fadeIn" data-animation-delay="100">-->
+<!--                <br>-->
+<!--                <h3 class="font-montserrat cover-heading mb20 mt20">Registar</h3>-->
+<!--                <form class="clearfix mb35" method="post" action="--><?php //echo htmlspecialchars($_SERVER["PHP_SELF"]); ?><!--">-->
+<!--                    <div class="col-sm-8 col-sm-offset-2">-->
+<!--                        <input type="text" name="username" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username">-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-4 col-sm-offset-2 mt10">-->
+<!--                        <input type="password" name="password" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Password">-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-4 mt10">-->
+<!--                        <input type="password" name="password_confirm" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Confirmar Password">-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-8 col-sm-offset-2 mt10">-->
+<!--                        <input type="email" name="email" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Email">-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="col-sm-4 col-sm-offset-2 mt10">-->
+<!--                        <input type="text" name="name" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Nome">-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-4 mt10">-->
+<!--                        <input type="text" name="surname" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Sobrenome">-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-8 mt10 col-sm-offset-2">-->
+<!--                        <input name="data_nascimento" placeholder="Data de nascimento" class="form-control text-center no-border input-lg input-circle bg-light-transparent" type="text" onfocus="(this.type='date')"  id="date">-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-8 col-sm-offset-2 mt5">-->
+<!--                        <button name="register" class="button button-lg button-circle button-block button-pasific hover-ripple-out">Registar</button><br><br>-->
+<!--                        <a href="#" class="color-light mt20 showFormLogin" id="showFormLogin">Tem uma conta? Login</a><br>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--                <br>-->
+<!--            </div>-->
 
             <div class="mastfoot">
                 <div class="inner">
@@ -213,21 +220,21 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
 <!-- Custom Script
 =====================================-->
 <script>
-    $(function(){
-        "use strict";
-        $(".showFormRegister").on('click',function(){
-            $("#formLogin").addClass("hidden");
-            $("#formRegister").removeClass("hidden");
-            $(".showFormRegister").addClass("hidden");
-            $(".showFormLogin").removeClass("hidden");
-        });
-        $(".showFormLogin").on('click',function(){
-            $("#formLogin").removeClass("hidden");
-            $("#formRegister").addClass("hidden");
-            $(".showFormRegister").removeClass("hidden");
-            $(".showFormLogin").addClass("hidden");
-        })
-    })
+    // $(function(){
+    //     "use strict";
+    //     $(".showFormRegister").on('click',function(){
+    //         $("#formLogin").addClass("hidden");
+    //         $("#formRegister").removeClass("hidden");
+    //         $(".showFormRegister").addClass("hidden");
+    //         $(".showFormLogin").removeClass("hidden");
+    //     });
+    //     $(".showFormLogin").on('click',function(){
+    //         $("#formLogin").removeClass("hidden");
+    //         $("#formRegister").addClass("hidden");
+    //         $(".showFormRegister").removeClass("hidden");
+    //         $(".showFormLogin").addClass("hidden");
+    //     })
+    // })
 
 </script>
 
