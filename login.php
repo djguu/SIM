@@ -142,40 +142,6 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/SIM/php/login.php';
                 <br>
             </div>
 
-<!--            <div id="formRegister" class="inner cover text-center hidden animated" data-animation="fadeIn" data-animation-delay="100">-->
-<!--                <br>-->
-<!--                <h3 class="font-montserrat cover-heading mb20 mt20">Registar</h3>-->
-<!--                <form class="clearfix mb35" method="post" action="--><?php //echo htmlspecialchars($_SERVER["PHP_SELF"]); ?><!--">-->
-<!--                    <div class="col-sm-8 col-sm-offset-2">-->
-<!--                        <input type="text" name="username" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username">-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-4 col-sm-offset-2 mt10">-->
-<!--                        <input type="password" name="password" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Password">-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-4 mt10">-->
-<!--                        <input type="password" name="password_confirm" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Confirmar Password">-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-8 col-sm-offset-2 mt10">-->
-<!--                        <input type="email" name="email" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Email">-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="col-sm-4 col-sm-offset-2 mt10">-->
-<!--                        <input type="text" name="name" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Nome">-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-4 mt10">-->
-<!--                        <input type="text" name="surname" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Sobrenome">-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-8 mt10 col-sm-offset-2">-->
-<!--                        <input name="data_nascimento" placeholder="Data de nascimento" class="form-control text-center no-border input-lg input-circle bg-light-transparent" type="text" onfocus="(this.type='date')"  id="date">-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-8 col-sm-offset-2 mt5">-->
-<!--                        <button name="register" class="button button-lg button-circle button-block button-pasific hover-ripple-out">Registar</button><br><br>-->
-<!--                        <a href="#" class="color-light mt20 showFormLogin" id="showFormLogin">Tem uma conta? Login</a><br>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--                <br>-->
-<!--            </div>-->
-
             <div class="mastfoot">
                 <div class="inner">
                     <p class="color-light text-center">&copy;2016 Pasific Templare by Myboodesign.com</p>
