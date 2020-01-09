@@ -31,7 +31,7 @@
         // Validate credentials
         if(empty($username_error) && empty($password_error)){
             // Prepare a select statement
-            $sql = sprintf("SELECT id, username, password FROM user_t WHERE username = '%s'", $username);
+            $sql = sprintf("SELECT id, username, password FROM user_t WHERE username = ?");
 
             if($stmt = mysqli_prepare($db, $sql)){
                 // Bind variables to the prepared statement as parameters

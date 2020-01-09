@@ -126,7 +126,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/SIM/php/login.php';
                 <h3 class="font-montserrat cover-heading mb20 mt20">Login</h3>
                 <form class="clearfix mb35" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="col-sm-8 col-sm-offset-2 <?php echo (!empty($username_error)) ? 'text-danger' : ''; ?>">
-                        <input type="text" name="username_login" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username" value="<?php echo $username; ?>">
+                        <input type="text" name="username_login" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username" value="<?= $username; ?>">
                         <span class="text-danger"><?php echo $username_error; ?></span>
                     </div>
                     <div class="col-sm-8 col-sm-offset-2 mt10" <?php echo (!empty($password_error)) ? 'text-danger' : ''; ?>>
