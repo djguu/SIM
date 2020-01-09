@@ -117,8 +117,46 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $birthdate_fill = $birthdate_post;
 
+    if(empty($username_error) && empty($password_error) && empty($confirm_password_error) &&
+        empty($email_error) && empty($name_error) && empty($surname_error) && empty($birthdate_error)){
+        // Prepare an insert statement
+        $sql = "INSERT INTO user_t (username, password, email, name, surname, data_nascimento, hash_confirm, confirmed) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
 
-    //TODO
-    // FAZER O RESTO DO REGISTO
-    // FALTA CAMPOS DE NOME E DATA DE NASCIMENTO
+
+        if($stmt = mysqli_prepare($db, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "sssssssi", $param_username, $param_password, $param_email, $param_name,
+                                                            $param_surname, $param_birthdate, $param_hash, $param_confirmed);
+
+            // Set parameters
+            $param_username = $username;
+            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            //----------------------------
+            $token = openssl_random_pseudo_bytes(16);
+            $token = bin2hex($token);
+            //----------------------------
+            $param_hash = $token;
+            $param_email = $email_post;
+            $param_name = $name_post;
+            $param_surname = $surname_post;
+            $param_birthdate = $birthdate_post;
+            $param_confirmed = 0;
+
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Redirect to login page
+                header("location: login.php");
+            } else{
+                printf("Error: %s.\n", mysqli_stmt_error($stmt));
+                echo "Ocorreu um erro. Tente novamente mais tarde.";
+            }
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+        else{
+            printf("Error: %s.\n", $db->error);
+        }
+    }
+    // Close connection
+    mysqli_close($db);
 }
