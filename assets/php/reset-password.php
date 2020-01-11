@@ -1,4 +1,7 @@
 <?php
+//TODO
+// fazer com que isto funcemine como o registo
+
 // Initialize the session
 session_start();
 
