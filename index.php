@@ -6,7 +6,6 @@ if(!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]){
     header("location: login.php");
     exit;
 }
-//echo isset($_SESSION["loggedin"]);
 
 ?>
 

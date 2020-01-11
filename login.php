@@ -1,15 +1,4 @@
-<?php
-//session_start();
-//
-//if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
-//    header("location: index.php");
-//    exit;
-//}
-
-//error_reporting(E_ERROR | E_PARSE);
-ini_set('display_errors',1);
-require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/login.php';
-?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/login.php'; ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -87,7 +76,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/login.php';
 <!--    </div>-->
 <!--</div>-->
 
-<div class="site-wrapper" style="background-color:lightgrey">
+<div class="site-wrapper" style="background-color:lightseagreen">
 <!--    <div class="site-wrapper" style="background:url(assets/img/bg/img-bg-26.jpg) 50% 50% no-repeat;">-->
 
     <div class="site-wrapper-inner">
@@ -135,7 +124,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/login.php';
                     </div>
                     <div class="col-sm-8 col-sm-offset-2 mt5">
                         <button class="button button-lg button-circle button-block button-pasific hover-ripple-out">Login</button><br><br>
-                        <a href="#" class="color-light mt20">Repor palavra-passe</a><br>
+                        <a href="reset-password.php" class="color-light mt20">Repor palavra-passe</a><br>
                         <a href="registo.php" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
                     </div>
                 </form>
@@ -144,7 +133,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/login.php';
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p class="color-light text-center">&copy;2016 Pasific Templare by Myboodesign.com</p>
+<!--                    <p class="color-light text-center">&copy;2016 Pasific Templare by Myboodesign.com</p>-->
                 </div>
             </div>
 
@@ -181,28 +170,5 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/login.php';
 <script src="assets/js/main/ion.rangeSlider.min.js"></script>
 <script src="assets/js/main/imagesloaded.pkgd.min.js"></script>
 <script src="assets/js/main/main.js"></script>
-
-
-<!-- Custom Script
-=====================================-->
-<script>
-    // $(function(){
-    //     "use strict";
-    //     $(".showFormRegister").on('click',function(){
-    //         $("#formLogin").addClass("hidden");
-    //         $("#formRegister").removeClass("hidden");
-    //         $(".showFormRegister").addClass("hidden");
-    //         $(".showFormLogin").removeClass("hidden");
-    //     });
-    //     $(".showFormLogin").on('click',function(){
-    //         $("#formLogin").removeClass("hidden");
-    //         $("#formRegister").addClass("hidden");
-    //         $(".showFormRegister").removeClass("hidden");
-    //         $(".showFormLogin").addClass("hidden");
-    //     })
-    // })
-
-</script>
-
 </body>
 </html>

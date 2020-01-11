@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors',1);
 // Define connection as a static variable, to avoid connecting more than once
 static $connection;
 function db_connect() {

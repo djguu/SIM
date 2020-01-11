@@ -14,11 +14,11 @@ port = <3306>
 *Structure:*
 ```
 sim
-│___...
+│___assets
 |
 │   
 └───private
-│   config.ini
+│   |___config.ini
 │   
 └───...
 ```

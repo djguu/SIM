@@ -1,15 +1,4 @@
-<?php
-//session_start();
-//
-//if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]){
-//    header("location: index.php");
-//    exit;
-//}
-
-//error_reporting(E_ERROR | E_PARSE);
-
-require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/registo.php';
-?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/registo.php'; ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -87,7 +76,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/registo.php';
 <!--    </div>-->
 <!--</div>-->
 
-<div class="site-wrapper" style="background-color:lightgrey">
+<div class="site-wrapper" style="background-color:lightseagreen">
     <!--    <div class="site-wrapper" style="background:url(assets/img/bg/img-bg-26.jpg) 50% 50% no-repeat;">-->
 
     <div class="site-wrapper-inner">
@@ -164,7 +153,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/registo.php';
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p class="color-light text-center">&copy;2016 Pasific Templare by Myboodesign.com</p>
+<!--                    <p class="color-light text-center">&copy;2016 Pasific Templare by Myboodesign.com</p>-->
                 </div>
             </div>
 
@@ -201,28 +190,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/registo.php';
 <script src="assets/js/main/ion.rangeSlider.min.js"></script>
 <script src="assets/js/main/imagesloaded.pkgd.min.js"></script>
 <script src="assets/js/main/main.js"></script>
-
-
-<!-- Custom Script
-=====================================-->
-<script>
-    // $(function(){
-    //     "use strict";
-    //     $(".showFormRegister").on('click',function(){
-    //         $("#formLogin").addClass("hidden");
-    //         $("#formRegister").removeClass("hidden");
-    //         $(".showFormRegister").addClass("hidden");
-    //         $(".showFormLogin").removeClass("hidden");
-    //     });
-    //     $(".showFormLogin").on('click',function(){
-    //         $("#formLogin").removeClass("hidden");
-    //         $("#formRegister").addClass("hidden");
-    //         $(".showFormRegister").removeClass("hidden");
-    //         $(".showFormLogin").addClass("hidden");
-    //     })
-    // })
-
-</script>
 
 </body>
 </html>
