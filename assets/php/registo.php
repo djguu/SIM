@@ -8,7 +8,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/includes/db.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.php';
 
 $username = $password = "";
 $username_error = $password_error = $confirm_password_error = $email_error = $name_error = $surname_error = $birthdate_error = "";

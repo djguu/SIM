@@ -8,7 +8,7 @@
         exit;
     }
 
-    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/db.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db.php';
 
     $username = $password = "";
     $username_error = $password_error = "";

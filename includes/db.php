@@ -1,14 +1,13 @@
 <?php
+// Define connection as a static variable, to avoid connecting more than once
+static $connection;
 function db_connect() {
-
-    // Define connection as a static variable, to avoid connecting more than once
-    static $connection;
 
     // Try and connect to the database, if a connection has not been established yet
     if(!isset($connection)) {
         // Load configuration as an array. Use the actual location of your configuration file
         $config = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/private/config.ini');
-        $connection = mysqli_connect($config['host'],$config['username'],$config['password'],$config['dbname'], 3306);
+        $connection = mysqli_connect($config['host'],$config['username'],$config['password'],$config['dbname'], $config['port']);
     }
 
     // If connection was not successful, handle the error

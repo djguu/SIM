@@ -8,7 +8,7 @@
 
 //error_reporting(E_ERROR | E_PARSE);
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/php/registo.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/registo.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt">
