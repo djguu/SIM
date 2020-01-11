@@ -1384,33 +1384,33 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="330" name="name">
+    <column id="343" parent="330" name="username">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="330" name="surname">
+    <column id="344" parent="330" name="password">
       <Position>3</Position>
-      <DataType>varchar(50)|0s</DataType>
+      <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="345" parent="330" name="username">
+    <column id="345" parent="330" name="email">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="346" parent="330" name="email">
+    <column id="346" parent="330" name="name">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="347" parent="330" name="password">
+    <column id="347" parent="330" name="surname">
       <Position>6</Position>
-      <DataType>varchar(200)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1420,32 +1420,38 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="349" parent="330" name="data_nascimento">
+    <column id="349" parent="330" name="confirmed">
       <Position>8</Position>
+      <DataType>int(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="350" parent="330" name="data_nascimento">
+      <Position>9</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="350" parent="330" name="user_unique">
+    <index id="351" parent="330" name="user_unique">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="351" parent="330" name="email_unique">
+    <index id="352" parent="330" name="email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="352" parent="330" name="PRIMARY">
+    <key id="353" parent="330" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="353" parent="330" name="user_unique">
+    <key id="354" parent="330" name="user_unique">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>user_unique</UnderlyingIndexName>
     </key>
-    <key id="354" parent="330" name="email_unique">
+    <key id="355" parent="330" name="email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>email_unique</UnderlyingIndexName>
     </key>

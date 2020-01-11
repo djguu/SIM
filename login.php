@@ -8,7 +8,7 @@
 
 //error_reporting(E_ERROR | E_PARSE);
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/SIM/php/login.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/php/login.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt">
