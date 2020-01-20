@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate confirm password
     if(empty($password_confirm_post)){
-        $confirm_password_error = "Confirma a sua palavra-passe.";
+        $confirm_password_error = "Confirme a sua palavra-passe.";
     } else{
         $confirm_password = $password_confirm_post;
         if(empty($password_error) && ($password != $confirm_password)){

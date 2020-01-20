@@ -10,11 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-    <!-- Favicons -->
-<!--    <link rel="shortcut icon" href="assets/img/favicon.png">-->
-<!--    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">-->
-<!--    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png">-->
-<!--    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png">-->
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 
     <!-- Load Core CSS
     =====================================-->
@@ -23,7 +20,8 @@
 
     <!-- Load Main CSS
     =====================================-->
-    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main/main.css">
+
     <link rel="stylesheet" href="assets/css/main/setting.css">
     <link rel="stylesheet" href="assets/css/main/hover.css">
     <link rel="stylesheet" href="assets/css/main/cover.css">
@@ -115,7 +113,7 @@
                 <h3 class="font-montserrat cover-heading mb20 mt20">Login</h3>
                 <form class="clearfix mb35" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="col-sm-8 col-sm-offset-2 <?php echo (!empty($username_error)) ? 'text-danger' : ''; ?>">
-                        <input type="text" name="username_login" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username" value="<?= $username; ?>">
+                        <input type="text" name="username_login" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username" value="<?= (empty($_GET["user"])) ? $username : $_GET["user"]; ?>">
                         <span class="text-danger"><?php echo $username_error; ?></span>
                     </div>
                     <div class="col-sm-8 col-sm-offset-2 mt10" <?php echo (!empty($password_error)) ? 'text-danger' : ''; ?>>
@@ -154,10 +152,6 @@
 <script src="assets/js/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="assets/js/magnific-popup/magnific-popup-zoom-gallery.js"></script>
 
-<!-- Progress Bars
-=====================================-->
-<script src="assets/js/progress-bar/bootstrap-progressbar.min.js"></script>
-<script src="assets/js/progress-bar/bootstrap-progressbar-main.js"></script>
 
 <!-- JQuery Main
 =====================================-->

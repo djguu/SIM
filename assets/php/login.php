@@ -63,15 +63,15 @@
                                 header("location: index.php?user=".$_SESSION["username"]);
                             } else{
                                 // Display an error message if password is not valid
-                                $password_error = "The password you entered was not valid.";
+                                $password_error = "A password nao esta valida.";
                             }
                         }
                     } else{
                         // Display an error message if username doesn't exist
-                        $username_error = "No account found with that username.";
+                        $username_error = "Nao existe nenhuma conta com este username.";
                     }
                 } else{
-                    echo "Oops! Something went wrong. Please try again later.";
+                    echo "Ocorreu um erro. Tente novamente.";
                 }
             }
 

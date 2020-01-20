@@ -127,7 +127,7 @@
                         <span class="text-danger"><?php echo $confirm_password_error; ?></span>
                     </div>
                     <div class="col-sm-8 col-sm-offset-2 mt5">
-                        <button class="button button-lg button-circle button-block button-pasific hover-ripple-out">Reset</button><br><br>
+                        <button class="button button-lg button-circle button-block button-pasific hover-ripple-out">Repor</button><br><br>
                         <a href="login" class="color-light mt20">Tem uma conta? Login</a><br>
                         <a href="registo.php" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
                     </div>

@@ -18,51 +18,79 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/config/db.php';
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_error = $password_error = "";
-$confirm_password_error = $email_error = "";
+$confirm_password_error = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    $confirm_password = trim($_POST['password_confirm']);
 
-    // Validate new password
-    if(empty(trim($_POST["new_password"]))){
-        $new_password_err = "Please enter the new password.";
-    } elseif(strlen(trim($_POST["new_password"])) < 6){
-        $new_password_err = "Password must have atleast 6 characters.";
+    if(empty($username)){
+        $username_error = "Insira um username.";
     } else{
-        $new_password = trim($_POST["new_password"]);
+        // Prepare a select statement
+        $sql = "SELECT id FROM user_t WHERE username = ?";
+
+        if($stmt = mysqli_prepare($db, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+
+            // Set parameters
+            $param_username = $username;
+
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+
+                if(mysqli_stmt_num_rows($stmt) != 1){
+                    $username_error = "O utilizador não existe. Insira novamente.";
+                }
+            } else{
+                echo "Ocorreu um erro. Tente novamente.";
+            }
+        }
+
+        // Close statement
+        mysqli_stmt_close($stmt);
+    }
+    // Validate password
+    if(empty($password)){
+        $password_error = "Insira uma palavra-passe.";
+//            } elseif(strlen($password_post) < 5){
+//                $password_error = "A palavra passe devera ter pelo menos 5 caracteres";
     }
 
     // Validate confirm password
-    if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Please confirm the password.";
+    if(empty($confirm_password)){
+        $confirm_password_error = "Confirme a sua palavra-passe.";
     } else{
-        $confirm_password = trim($_POST["confirm_password"]);
-        if(empty($new_password_err) && ($new_password != $confirm_password)){
-            $confirm_password_err = "Password did not match.";
+        if(empty($password_error) && ($password != $confirm_password)){
+            $confirm_password_error = "Palavra-passe nao esta igual.";
         }
     }
 
     // Check input errors before updating the database
-    if(empty($new_password_err) && empty($confirm_password_err)){
+    if(empty($username_error) && empty($password_error) && empty($confirm_password_error)){
         // Prepare an update statement
-        $sql = "UPDATE users SET password = ? WHERE id = ?";
+        $sql = "UPDATE user_t SET password = ? WHERE username = ?";
 
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = mysqli_prepare($db, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
+            mysqli_stmt_bind_param($stmt, "ss", $param_password, $param_username);
 
             // Set parameters
-            $param_password = password_hash($new_password, PASSWORD_DEFAULT);
-            $param_id = $_SESSION["id"];
+            $param_password = password_hash($password, PASSWORD_DEFAULT);
+            $param_username = $username;
 
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
-                // Password updated successfully. Destroy the session, and redirect to login page
-                session_destroy();
-                header("location: login.php");
+                // Password updated successfully. Redirect to login page
+                header("location: login.php?user=$username");
                 exit();
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Ocorreu um erro. Tente novamente.";
             }
         }
 
@@ -71,6 +99,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Close connection
-    mysqli_close($link);
+    mysqli_close($db);
 }
-?>
