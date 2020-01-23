@@ -26,29 +26,11 @@
     <link rel="stylesheet" href="assets/css/main/hover.css">
     <link rel="stylesheet" href="assets/css/main/cover.css">
 
-    <!-- Load Magnific Popup CSS
-    =====================================-->
-    <link rel="stylesheet" href="assets/css/magnific/magic.min.css">
-    <link rel="stylesheet" href="assets/css/magnific/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/magnific/magnific-popup-zoom-gallery.css">
-
-    <!-- Load OWL Carousel CSS
-    =====================================-->
-    <link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/owl-carousel/owl.theme.css">
-    <link rel="stylesheet" href="assets/css/owl-carousel/owl.transitions.css">
 
     <link rel="stylesheet" href="assets/css/color/blue.css">
 
     <!-- Load Fontbase Icons - Please Uncomment to use linea icons
-    =====================================
-    <link rel="stylesheet" href="assets/css/icon/linea-arrows-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-basic-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-basic-elaboration-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-ecommerce-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-music-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-software-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-weather-10.css">-->
+    =====================================-->
     <link rel="stylesheet" href="assets/css/icon/font-awesome.css">
     <link rel="stylesheet" href="assets/css/icon/et-line-font.css">
 
@@ -131,7 +113,7 @@
 
             <div class="mastfoot">
                 <div class="inner">
-<!--                    <p class="color-light text-center">&copy;2016 Pasific Templare by Myboodesign.com</p>-->
+                    <p class="color-light text-center">&copy;2016 Pasific Templare by Myboodesign.com</p>
                 </div>
             </div>
 
@@ -147,21 +129,10 @@
 <script src="assets/js/core/jquery.min.js"></script>
 <script src="assets/js/core/bootstrap.min.js"></script>
 
-<!-- Magnific Popup
-=====================================-->
-<script src="assets/js/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/magnific-popup/magnific-popup-zoom-gallery.js"></script>
-
 
 <!-- JQuery Main
 =====================================-->
 <script src="assets/js/main/jquery.appear.js"></script>
-<script src="assets/js/main/isotope.pkgd.min.js"></script>
-<script src="assets/js/main/parallax.min.js"></script>
-<script src="assets/js/main/jquery.countTo.js"></script>
-<script src="assets/js/main/owl.carousel.min.js"></script>
-<script src="assets/js/main/jquery.sticky.js"></script>
-<script src="assets/js/main/ion.rangeSlider.min.js"></script>
 <script src="assets/js/main/imagesloaded.pkgd.min.js"></script>
 <script src="assets/js/main/main.js"></script>
 </body>

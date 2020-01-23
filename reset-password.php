@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <title>Reset Password</title>
+    <title>MyNotes - Reset</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta charset="utf-8">
@@ -10,11 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-    <!-- Favicons -->
-    <!--    <link rel="shortcut icon" href="assets/img/favicon.png">-->
-    <!--    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">-->
-    <!--    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png">-->
-    <!--    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png">-->
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 
     <!-- Load Core CSS
     =====================================-->
@@ -23,34 +20,17 @@
 
     <!-- Load Main CSS
     =====================================-->
-    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main/main.css">
+
     <link rel="stylesheet" href="assets/css/main/setting.css">
     <link rel="stylesheet" href="assets/css/main/hover.css">
     <link rel="stylesheet" href="assets/css/main/cover.css">
 
-    <!-- Load Magnific Popup CSS
-    =====================================-->
-    <link rel="stylesheet" href="assets/css/magnific/magic.min.css">
-    <link rel="stylesheet" href="assets/css/magnific/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/magnific/magnific-popup-zoom-gallery.css">
-
-    <!-- Load OWL Carousel CSS
-    =====================================-->
-    <link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/owl-carousel/owl.theme.css">
-    <link rel="stylesheet" href="assets/css/owl-carousel/owl.transitions.css">
 
     <link rel="stylesheet" href="assets/css/color/blue.css">
 
     <!-- Load Fontbase Icons - Please Uncomment to use linea icons
-    =====================================
-    <link rel="stylesheet" href="assets/css/icon/linea-arrows-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-basic-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-basic-elaboration-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-ecommerce-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-music-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-software-10.css">
-    <link rel="stylesheet" href="assets/css/icon/linea-weather-10.css">-->
+    =====================================-->
     <link rel="stylesheet" href="assets/css/icon/font-awesome.css">
     <link rel="stylesheet" href="assets/css/icon/et-line-font.css">
 
@@ -153,25 +133,9 @@
 <script src="assets/js/core/jquery.min.js"></script>
 <script src="assets/js/core/bootstrap.min.js"></script>
 
-<!-- Magnific Popup
-=====================================-->
-<script src="assets/js/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/magnific-popup/magnific-popup-zoom-gallery.js"></script>
-
-<!-- Progress Bars
-=====================================-->
-<script src="assets/js/progress-bar/bootstrap-progressbar.min.js"></script>
-<script src="assets/js/progress-bar/bootstrap-progressbar-main.js"></script>
-
 <!-- JQuery Main
 =====================================-->
 <script src="assets/js/main/jquery.appear.js"></script>
-<script src="assets/js/main/isotope.pkgd.min.js"></script>
-<script src="assets/js/main/parallax.min.js"></script>
-<script src="assets/js/main/jquery.countTo.js"></script>
-<script src="assets/js/main/owl.carousel.min.js"></script>
-<script src="assets/js/main/jquery.sticky.js"></script>
-<script src="assets/js/main/ion.rangeSlider.min.js"></script>
 <script src="assets/js/main/imagesloaded.pkgd.min.js"></script>
 <script src="assets/js/main/main.js"></script>
 
