@@ -4,7 +4,8 @@
 
     // Check if the user is already logged in, if yes then redirect him to welcome page
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-        header("location: index.php?user=".$_SESSION["username"]);
+        header('HTTP/1.0 302 Found');
+        header("location: ".$_SERVER['DOCUMENT_ROOT']."/assets/pages/index.php?user=".$_SESSION["username"]);
         exit;
     }
 
@@ -60,7 +61,9 @@
                                 $_SESSION["username"] = $username;
 
                                 // Redirect user to welcome page
-                                header("location: index.php?user=".$_SESSION["username"]);
+                                header('HTTP/1.0 302 Found');
+                                header("location: ".$_SERVER['DOCUMENT_ROOT']."/index.php");
+                                exit;
                             } else{
                                 // Display an error message if password is not valid
                                 $password_error = "A password nao esta valida.";

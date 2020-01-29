@@ -62,8 +62,8 @@
                     </div>
                     <div class="col-sm-8 col-sm-offset-2 mt5">
                         <button class="button button-lg button-circle button-block button-pasific hover-ripple-out">Login</button><br><br>
-                        <a href="reset-password.php" class="color-light mt20">Repor palavra-passe</a><br>
-                        <a href="registo.php" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
+                        <a href="<?php $_SERVER['DOCUMENT_ROOT']?>/assets/pages/reset-password.php" class="color-light mt20">Repor palavra-passe</a><br>
+                        <a href="<?php $_SERVER['DOCUMENT_ROOT']?>/assets/pages/registo.php" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
                     </div>
                 </form>
                 <br>
