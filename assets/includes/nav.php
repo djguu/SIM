@@ -32,6 +32,7 @@
                             <?=$_SESSION["username"]?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/assets/pages/login.php">Temporary Login</a>
                             <a class="dropdown-item" href="#">Settings</a>
                             <a class="dropdown-item" href="/assets/php/logout.php">Logout</a>
 
