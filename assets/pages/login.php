@@ -1,9 +1,9 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/login.php'; ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/php/login.php'); ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <title>MyNotes - Login</title>
-    <?php include('includes/header.html') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/header.php') ?>
 </head>
 <body>
 
@@ -32,7 +32,6 @@
                                     <i class="fa fa-bars"></i>
                                 </button>
                                 <a class="navbar-brand page-scroll" href="#">
-<!--                                    <img src="assets/img/logo/logo-default.png" alt="logo" class="">-->
                                     <span class="color-dark">MyNotes</span>
                                 </a>
                             </div>
@@ -46,7 +45,6 @@
                             </div>
                         </div>
                     </nav>
-
                 </div>
             </div>
 
@@ -86,14 +84,14 @@
 
 <!-- JQuery Core
 =====================================-->
-<script src="assets/js/core/jquery.min.js"></script>
-<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="../js/core/jquery.min.js"></script>
+<script src="../js/core/bootstrap.min.js"></script>
 
 
 <!-- JQuery Main
 =====================================-->
-<script src="assets/js/main/jquery.appear.js"></script>
-<script src="assets/js/main/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/main/main.js"></script>
+<script src="../js/main/jquery.appear.js"></script>
+<script src="../js/main/imagesloaded.pkgd.min.js"></script>
+<script src="../js/main/main.js"></script>
 </body>
 </html>

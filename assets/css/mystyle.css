@@ -2,3 +2,7 @@
     color: #fff;
     font-family: 'Pacifico', cursive;
 }
+
+html, body{
+    height: 100%;
+}

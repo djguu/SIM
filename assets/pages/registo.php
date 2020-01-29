@@ -1,9 +1,9 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/reset-password.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/php/registo.php'; ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <title>MyNotes - Reset</title>
-    <?php include('includes/header.html') ?>
+    <title>MyNotes - Registo</title>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/header.php') ?>
 </head>
 <body  id="topPage" data-spy="scroll" data-target=".navbar" data-offset="100">
 
@@ -39,8 +39,8 @@
 
                             <div class="navbar-collapse collapse navbar-main-collapse">
                                 <ul class="nav navbar-nav">
-                                    <li class=""><a href="registo.php" class="showFormRegister"><span class="color-dark">Registo</span></a>
-                                    <li class=""><a href="#" class="showFormRegister showFormLogin hidden"><span class="color-dark">Login</span></a>
+<!--                                    <li class=""><a href="#" class="showFormRegister"><span class="color-dark">Registo</span></a>-->
+                                    <li class=""><a href="login.php" class="showFormRegister showFormLogin"><span class="color-dark">Login</span></a>
                                 </ul>
 
                             </div>
@@ -50,26 +50,42 @@
                 </div>
             </div>
 
-            <div id="formLogin" class="inner cover text-center animated" data-animation="fadeIn" data-animation-delay="100">
+            <div id="formRegister" class="inner cover text-center animated" data-animation="fadeIn" data-animation-delay="100">
                 <br>
-                <h3 class="font-montserrat cover-heading mb20 mt20">Repor Password</h3>
+                <h3 class="font-montserrat cover-heading mb20 mt20">Registar</h3>
                 <form class="clearfix mb35" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                    <div class="col-sm-8 col-sm-offset-2 <?php echo (!empty($username_error)) ? 'text-danger' : ''; ?>">
-                        <input type="text" name="username" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username" value="<?= $username; ?>">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <input type="text" name="username" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Username" value="<?=$username_fill?>">
                         <span class="text-danger"><?php echo $username_error; ?></span>
                     </div>
-                    <div class="col-sm-8 col-sm-offset-2 mt10" <?php echo (!empty($password_error)) ? 'text-danger' : ''; ?>>
+                    <div class="col-sm-4 col-sm-offset-2 mt10">
                         <input type="password" name="password" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Password">
                         <span class="text-danger"><?php echo $password_error; ?></span>
                     </div>
-                    <div class="col-sm-8 col-sm-offset-2 mt10">
+                    <div class="col-sm-4 mt10">
                         <input type="password" name="password_confirm" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Confirmar Password">
                         <span class="text-danger"><?php echo $confirm_password_error; ?></span>
                     </div>
+                    <div class="col-sm-8 col-sm-offset-2 mt10">
+                        <input type="text" name="email" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Email" value="<?=$email_fill?>">
+                        <span class="text-danger"><?php echo $email_error; ?></span>
+                    </div>
+
+                    <div class="col-sm-4 col-sm-offset-2 mt10">
+                        <input type="text" name="name" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Nome" value="<?=$name_fill?>">
+                        <span class="text-danger"><?php echo $name_error; ?></span>
+                    </div>
+                    <div class="col-sm-4 mt10">
+                        <input type="text" name="surname" class="form-control text-center no-border input-lg input-circle bg-light-transparent" placeholder="Sobrenome" value="<?=$surname_fill?>">
+                        <span class="text-danger"><?php echo $surname_error; ?></span>
+                    </div>
+                    <div class="col-sm-8 mt10 col-sm-offset-2">
+                        <input name="birthdate" placeholder="Data de nascimento" class="form-control text-center no-border input-lg input-circle bg-light-transparent" type="text" onfocus="(this.type='date')"  id="date" value="<?=$birthdate_fill?>">
+                        <span class="text-danger"><?php echo $birthdate_error; ?></span>
+                    </div>
                     <div class="col-sm-8 col-sm-offset-2 mt5">
-                        <button class="button button-lg button-circle button-block button-pasific hover-ripple-out">Repor</button><br><br>
-                        <a href="login" class="color-light mt20">Tem uma conta? Login</a><br>
-                        <a href="registo.php" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
+                        <button name="register" class="button button-lg button-circle button-block button-pasific hover-ripple-out">Registar</button><br><br>
+                        <a href="login.php" class="color-light mt20 showFormLogin" id="showFormLogin">Tem uma conta? Login</a><br>
                     </div>
                 </form>
                 <br>
@@ -90,14 +106,14 @@
 
 <!-- JQuery Core
 =====================================-->
-<script src="assets/js/core/jquery.min.js"></script>
-<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="../js/core/jquery.min.js"></script>
+<script src="../js/core/bootstrap.min.js"></script>
 
 <!-- JQuery Main
 =====================================-->
-<script src="assets/js/main/jquery.appear.js"></script>
-<script src="assets/js/main/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/main/main.js"></script>
+<script src="../js/main/jquery.appear.js"></script>
+<script src="../js/main/imagesloaded.pkgd.min.js"></script>
+<script src="../js/main/main.js"></script>
 
 </body>
 </html>
