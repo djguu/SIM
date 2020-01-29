@@ -5,7 +5,7 @@
     // Check if the user is already logged in, if yes then redirect him to welcome page
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         header('HTTP/1.0 302 Found');
-        header("location: /assets/pages/index.php?user=".$_SESSION["username"]);
+        header("location: /index.php");
         exit;
     }
 
