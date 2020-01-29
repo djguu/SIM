@@ -1,6 +1,6 @@
 <?php
 $query = "SELECT id, title, text FROM note_t WHERE (type = ?) AND (user_id = ?) ORDER by ID DESC";
-if( isset($_SESSION['id'])){
+//if( isset($_SESSION['id'])){
     if ($stmt = mysqli_prepare($db, $query)) {
         /* bind result variables */
         mysqli_stmt_bind_param($stmt, "si", $param_type, $param_user);
@@ -39,6 +39,6 @@ if( isset($_SESSION['id'])){
             $stmt->close();
         }
     }
-}
+//}
 /* close connection */
 $db->close();
