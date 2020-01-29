@@ -1,13 +1,13 @@
 <?php
 $query = "SELECT id, title, text FROM note_t WHERE (type = ?) AND (user_id = ?) ORDER by ID DESC";
-//if( isset($_SESSION['id'])){
+if( isset($_SESSION['id'])){
     if ($stmt = mysqli_prepare($db, $query)) {
         /* bind result variables */
         mysqli_stmt_bind_param($stmt, "si", $param_type, $param_user);
 
         $param_type = "txt";
-//        $param_user = $_SESSION['id'];
-        $param_user = 10;
+        $param_user = $_SESSION['id'];
+
         /* execute statement */
         if(mysqli_stmt_execute($stmt)){
             /* bind result variables */
@@ -21,8 +21,8 @@ $query = "SELECT id, title, text FROM note_t WHERE (type = ?) AND (user_id = ?) 
                                 <div class="home_text">
                                     <h1>' . $title . '</h1>
                                     <p class="mt-25">' . $text . '</p>
-                                    <a href="?edit=' . $id . '" class="btn_1"><button type="submit" class="btn btn-sm btn-info ">Editar/Ver</button></a>
-                                    <a href="?delete=' . $id . '" class="btn_1"><button type="submit" class="btn btn-sm btn-danger">Remover</button></a>
+                                    <a href="?edit=' . $id . '"><button type="submit" class="btn btn-sm btn-info ">Editar/Ver</button></a>
+                                    <a href="?delete=' . $id . '"><button type="submit" class="btn btn-sm btn-danger">Remover</button></a>
                                 </div>
                             </div>';
             }
@@ -39,6 +39,6 @@ $query = "SELECT id, title, text FROM note_t WHERE (type = ?) AND (user_id = ?) 
             $stmt->close();
         }
     }
-//}
+}
 /* close connection */
 $db->close();

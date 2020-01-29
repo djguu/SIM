@@ -13,7 +13,8 @@ if ($stmt = mysqli_prepare($db, $query)) {
         mysqli_stmt_bind_result($stmt, $title, $text);
         /* fetch values */
         while (mysqli_stmt_fetch($stmt)) {
-            echo '<div class="w-100 mx-auto align-content-center">
+            echo '
+<div class="w-100 mx-auto align-content-center">
     <form class = "justify-content-center" method="post" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'">
         <div class="form-group row">
             <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Titulo:</label>
@@ -29,7 +30,9 @@ if ($stmt = mysqli_prepare($db, $query)) {
         </div>
         <div class="form-group row">
             <div class="col-sm-6">
-                <button type="submit" class="btn btn-secondary">Voltar</button>
+                <a href="/">
+                    <button type="button" class="btn btn-secondary">Voltar</button>
+                </a>
             </div>
             <div class="col-sm-1">
                 <button type="submit" class="btn btn-primary">Edit</button>
