@@ -1,13 +1,6 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/sessions_user.php');
 ?>
-<!---->
-<!--<html lang="pt">-->
-<!--<body>-->
-<!--<h1>HELLLO--><?//=$_SESSION["loggedin"]?><!--</h1>-->
-<!--<a href="assets/php/logout.php">Logout</a>-->
-<!--</body>-->
-<!--</html>-->
 <html lang="pt">
 <head>
     <title>MyNotes</title>
@@ -15,17 +8,24 @@ include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/sessions_user.php');
 
 </head>
 <body>
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/nav.php') ?>
+<?php
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/nav.php');
+require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/config/db.php';
+?>
 
-<!-- JQuery Core
-=====================================-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="/assets/js/myscript.js"></script>
+<section class="home_part">
+    <div class="container min-vh-100 row align-items-center mx-auto">
+            <?php
+            if(!isset($_GET["edit"])){
+                include($_SERVER['DOCUMENT_ROOT'] . '/assets/php/notes_list.php');
+            }
+            elseif(isset($_GET["edit"])){
+                include($_SERVER['DOCUMENT_ROOT'] . '/assets/php/notes_edit.php');
+            }
+            ?>
+    </div>
+</section>
 
-
-<!-- JQuery Main
-=====================================-->
-<!--<script src="assets/js/main/main.js"></script>-->
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/main_js.html') ?>
 </body>
 </html>

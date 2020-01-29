@@ -39,7 +39,6 @@
                             <div class="navbar-collapse collapse navbar-main-collapse">
                                 <ul class="nav navbar-nav">
                                     <li class=""><a href="registo.php" class="showFormRegister"><span class="color-dark">Registo</span></a>
-                                    <li class=""><a href="#" class="showFormRegister showFormLogin hidden"><span class="color-dark">Login</span></a>
                                 </ul>
 
                             </div>

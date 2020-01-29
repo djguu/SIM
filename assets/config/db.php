@@ -9,6 +9,7 @@ function db_connect() {
         // Load configuration as an array. Use the actual location of your configuration file
         $config = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/private/config.ini');
         $connection = mysqli_connect($config['host'],$config['username'],$config['password'],$config['dbname'], $config['port']);
+        mysqli_set_charset($connection, 'utf8');
     }
 
     // If connection was not successful, handle the error

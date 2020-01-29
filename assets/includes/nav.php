@@ -15,10 +15,10 @@
                         <a class="nav-link" href="/">Notas</a>
                     </li>
                     <li id="img_nav" class="nav-item">
-                        <a class="nav-link" href="#">Imagens</a>
+                        <a class="nav-link" href="/assets/pages/images.php">Imagens</a>
                     </li>
                     <li id="vid_nav" class="nav-item">
-                        <a class="nav-link" href="#">Videos</a>
+                        <a class="nav-link" href="/assets/pages/videos.php">Videos</a>
                     </li>
                     <li id="calendar_nav" class="nav-item">
                         <a class="nav-link" href="/assets/pages/calendar.php">Calendario</a>
@@ -31,7 +31,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?=$_SESSION["username"]?>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-inf" aria-labelledby="navbarDropdown">
                             <--TODO remover isto quanto antes-->
                             <a class="dropdown-item" href="/assets/pages/login.php">Login temp</a>
                             <a class="dropdown-item" href="#">Settings</a>
