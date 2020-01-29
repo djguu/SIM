@@ -62,7 +62,7 @@
 
                                 // Redirect user to welcome page
                                 header('HTTP/1.0 302 Found');
-                                header("location: ".$_SERVER['DOCUMENT_ROOT']."/index.php");
+                                header("location: /index.php");
                                 exit;
                             } else{
                                 // Display an error message if password is not valid
