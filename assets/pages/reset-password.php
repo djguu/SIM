@@ -3,7 +3,7 @@
 <html lang="pt">
 <head>
     <title>MyNotes - Reset</title>
-    <?php include('includes/header.php') ?>
+    <?php include('includes/header.html') ?>
 </head>
 <body  id="topPage" data-spy="scroll" data-target=".navbar" data-offset="100">
 

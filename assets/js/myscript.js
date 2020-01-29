@@ -1,4 +1,4 @@
-$(window).on("load", function (e) {
+$(window).on("load", function () {
     let title = document.title;
     switch (title) {
         case "MyNotes":

@@ -5,14 +5,14 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="<?php $_SERVER['DOCUMENT_ROOT']?>/">
+                <a class="navbar-brand" href="/">
                     <span class="color-dark">MyNotes</span>
                 </a>
             </div>
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
                     <li id="notes_nav" class="nav-item">
-                        <a class="nav-link" href="<?php $_SERVER['DOCUMENT_ROOT']?>/">Notas</a>
+                        <a class="nav-link" href="/">Notas</a>
                     </li>
                     <li id="img_nav" class="nav-item">
                         <a class="nav-link" href="#">Imagens</a>
@@ -21,7 +21,7 @@
                         <a class="nav-link" href="#">Videos</a>
                     </li>
                     <li id="calendar_nav" class="nav-item">
-                        <a class="nav-link" href="<?php $_SERVER['DOCUMENT_ROOT']?>/assets/pages/calendar.php">Calendario</a>
+                        <a class="nav-link" href="/assets/pages/calendar.php">Calendario</a>
                     </li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Settings</a>
-                            <a class="dropdown-item" href="<?php $_SERVER['DOCUMENT_ROOT']?>/assets/php/logout.php">Logout</a>
+                            <a class="dropdown-item" href="/assets/php/logout.php">Logout</a>
 
                         </div>
                     </li>

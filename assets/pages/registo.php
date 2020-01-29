@@ -3,7 +3,7 @@
 <html lang="pt">
 <head>
     <title>MyNotes - Registo</title>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/header.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/includes/header.html') ?>
 </head>
 <body  id="topPage" data-spy="scroll" data-target=".navbar" data-offset="100">
 
