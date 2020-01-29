@@ -6,8 +6,8 @@ if( isset($_SESSION['id'])){
         mysqli_stmt_bind_param($stmt, "si", $param_type, $param_user);
 
         $param_type = "txt";
-        $param_user = $_SESSION['id'];
-
+//        $param_user = $_SESSION['id'];
+        $param_user = 10;
         /* execute statement */
         if(mysqli_stmt_execute($stmt)){
             /* bind result variables */
