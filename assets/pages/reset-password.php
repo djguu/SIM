@@ -55,8 +55,8 @@
             <div class="row">
                 <div class="col-sm-12 col-sm-offset-2 mt5">
                     <button class="button button-lg button-circle button-block button-pasific hover-ripple-out">Repor</button><br><br>
-                    <a href="login" class="color-light mt20">Tem uma conta? Login</a><br>
-                    <a href="registo.php" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
+                    <a href="/assets/pages/login.php" class="color-light mt20">Tem uma conta? Login</a><br>
+                    <a href="/assets/pages/registo.php" class="color-light mt20 showFormRegister" id="showFormRegister">Registar</a>
                 </div>
             </div>
         </form>
