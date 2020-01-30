@@ -34,7 +34,7 @@ if( isset($_SESSION['id'])){
             if(mysqli_stmt_num_rows($stmt) == 0) {
                 echo '<div class="col-sm-12">
                                 <div class="home_text text-center">
-                                    <h1>Nao tem imagens nenhumas</h1>
+                                    <h1>Nao tem Videos nenhuns</h1>
                                 </div>
                             </div>';
             }

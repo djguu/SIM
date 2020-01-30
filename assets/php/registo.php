@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php?user=".$_SESSION["username"]);
+    header("location: /");
     exit;
 }
 
@@ -22,9 +22,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password_post = trim($_POST["password"]);
     $password_confirm_post = trim($_POST["password_confirm"]);
     $email_post = trim($_POST["email"]);
-    $name_post = trim($_POST["name"]);
-    $surname_post = trim($_POST["surname"]);
-    $birthdate_post = trim($_POST["birthdate"]);
 
     // Validate username
     if(empty($username_post)){
@@ -91,43 +88,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $email_fill = $email_post;
 
-    // Validate name
-    if(empty($name_post)){
-        $name_error = "Insira o seu nome.";
-    } else{
-        $name = $name_post;
-    }
-    $name_fill = $name_post;
-
-    // Validate surname
-    if(empty($surname_post)){
-        $surname_error = "Insira o seu sobrenome.";
-    } else{
-        $surname = $surname_post;
-    }
-    $surname_fill = $surname_post;
-
-    if(empty($birthdate_post)){
-        $birthdate_error = "Insira a sua data de nascimento.";
-    } else{
-        $timestamp = strtotime($birthdate_post);
-        $year=date('Y',$timestamp);
-        if($year < 1920 || $year > ($date_now - 10)){
-            $birthdate_error = "Insira uma data correta.";
-        }
-    }
-    $birthdate_fill = $birthdate_post;
-
-    if(empty($username_error) && empty($password_error) && empty($confirm_password_error) &&
-        empty($email_error) && empty($name_error) && empty($surname_error) && empty($birthdate_error)){
+    if(empty($username_error) && empty($password_error) && empty($confirm_password_error) && empty($email_error)){
         // Prepare an insert statement
-        $sql = "INSERT INTO user_t (username, password, email, name, surname, data_nascimento, hash_confirm, confirmed) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
+        $sql = "INSERT INTO user_t (username, password, email, hash_confirm, confirmed) VALUES (?, ?, ?, ?, ?)";
 
 
         if($stmt = mysqli_prepare($db, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssi", $param_username, $param_password, $param_email, $param_name,
-                                                            $param_surname, $param_birthdate, $param_hash, $param_confirmed);
+            mysqli_stmt_bind_param($stmt, "ssssi", $param_username, $param_password, $param_email, $param_hash, $param_confirmed);
 
             // Set parameters
             $param_username = $username;
@@ -138,9 +106,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             //----------------------------
             $param_hash = $token;
             $param_email = $email_post;
-            $param_name = $name_post;
-            $param_surname = $surname_post;
-            $param_birthdate = $birthdate_post;
             $param_confirmed = 0;
 
             // Attempt to execute the prepared statement

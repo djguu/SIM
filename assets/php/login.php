@@ -5,7 +5,7 @@
     // Check if the user is already logged in, if yes then redirect him to welcome page
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         header('HTTP/1.0 302 Found');
-        header("location: /index.php");
+        header("location: /");
         exit;
     }
 
@@ -32,7 +32,7 @@
         // Validate credentials
         if(empty($username_error) && empty($password_error)){
             // Prepare a select statement
-            $sql = sprintf("SELECT id, username, password FROM user_t WHERE username = ?");
+            $sql = sprintf("SELECT id, username, password, confirmed FROM user_t WHERE username = ?");
 
             if($stmt = mysqli_prepare($db, $sql)){
                 // Bind variables to the prepared statement as parameters
@@ -49,7 +49,7 @@
                     // Check if username exists, if yes then verify password
                     if(mysqli_stmt_num_rows($stmt) == 1){
                         // Bind result variables
-                        mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                        mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $confirmed);
                         if(mysqli_stmt_fetch($stmt)){
                             if(password_verify($password, $hashed_password)){
                                 // Password is correct, so start a new session
@@ -59,6 +59,11 @@
                                 $_SESSION["loggedin"] = true;
                                 $_SESSION["id"] = $id;
                                 $_SESSION["username"] = $username;
+                                if($username === "admin"){
+                                    $_SESSION["admin"] = true;
+                                }
+                                else{$_SESSION["admin"] = false;}
+                                $_SESSION["confirmed"] = $confirmed;
 
                                 // Redirect user to welcome page
                                 header('HTTP/1.0 302 Found');

@@ -1,24 +1,7 @@
 #MyNotes Website for SIM
 
 1. **Create a virtual host or use main domain/subdomain**
-2. **Create a private/config.ini file and use this template** (remove all <> and change anything if needed)
 
-```ini
-[database]
-host = <localhost>
-username = <root>
-password = <password>
-dbname = <db>
-port = <3306>
-```
-*Structure:*
-```
-sim
-│___assets
-|
-│   
-└───private
-│   |___config.ini
-│   
-└───...
-```
+2. **Rename the file /private/config_example.ini to /private/config.ini**
+
+3. **Modify config.ini file to match your settings**

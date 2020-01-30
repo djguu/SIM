@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
-        <nav class="navbar navbar-pasific navbar-expand-md navbar-dark bg-primary">
-            <div class="navbar-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <div class="navbar-header navbar-pasific">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,9 +32,12 @@
                             <?=$_SESSION["username"]?>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-inf" aria-labelledby="navbarDropdown">
-                            <--TODO remover isto quanto antes-->
-                            <a class="dropdown-item" href="/assets/pages/login.php">Login temp</a>
-                            <a class="dropdown-item" href="#">Settings</a>
+                            <?php
+                                if(isset($_SESSION['admin']) && $_SESSION['admin']){
+                            ?><a class="dropdown-item" href="/assets/pages/admin.php">Admin-Dashboard</a><?php
+                                }
+                            ?>
+                            <a class="dropdown-item" href="/assets/pages/user.php">Settings</a>
                             <a class="dropdown-item" href="/assets/php/logout.php">Logout</a>
                         </div>
                     </li>

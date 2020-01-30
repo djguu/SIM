@@ -5,7 +5,7 @@ session_start();
 
 // Check if the user is logged in, otherwise redirect to login page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php?user=".$_SESSION["username"]);
+    header("location: /");
     exit;
 }
 
@@ -56,8 +56,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate password
     if(empty($password)){
         $password_error = "Insira uma palavra-passe.";
-//            } elseif(strlen($password_post) < 5){
-//                $password_error = "A palavra passe devera ter pelo menos 5 caracteres";
     }
 
     // Validate confirm password
